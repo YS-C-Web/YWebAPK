@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>YWEBAPK</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <h1>📲 YWEBAPK</h1>
+            <p>Tus apps Android favoritas, disponibles para descargar</p>
+
+            <div class="search-wrapper">
+                <button class="search-toggle" id="searchToggle" aria-label="Mostrar búsqueda">🔍</button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre..." />
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú lateral -->
+    <nav id="sideMenu" class="side-menu">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <ul>
+            <li><a href="#" id="menuSearch">🔍 Buscar</a></li>
+            <li><a href="#" id="menuSupport">💬 Comunidad / Soporte</a></li>
+            <li><a href="#" id="menuInfo">ℹ️ Información</a></li>
+            <li><a href="#" id="menuContact">📧 Contacto</a></li>
+            <li><a href="admin.html" target="_blank">🔐 Admin</a></li>
+        </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
+
+    <main>
+        <div class="controls">
+            <div class="sort-controls">
+                <label for="sortSelect">Ordenar por:</label>
+                <select id="sortSelect">
+                    <option value="name">Nombre</option>
+                    <option value="date" selected>Fecha (reciente)</option>
+                    <option value="size">Tamaño</option>
+                    <option value="downloads">Descargas</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="results-info" id="resultsInfo">Mostrando 1-9 de 12 resultados</div>
+        <div class="apk-grid" id="apkGrid"></div>
+        <div class="pagination" id="paginationControls"></div>
+    </main>
+
+    <!-- Modal de APK -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Soporte/Comunidad -->
+    <div class="modal" id="supportModal">
+        <div class="modal-content support-content">
+            <span class="close-btn" id="closeSupportModal">&times;</span>
+            <h2>💬 Comunidad / Soporte</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Envía tu mensaje, duda o sugerencia.</p>
+            <form id="supportForm">
+                <div class="form-group">
+                    <label for="userName">Tu nombre *</label>
+                    <input type="text" id="userName" required placeholder="Ej: Juan Pérez" />
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Tu email *</label>
+                    <input type="email" id="userEmail" required placeholder="ejemplo@correo.com" />
+                </div>
+                <div class="form-group">
+                    <label for="userMessage">Mensaje *</label>
+                    <textarea id="userMessage" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">📤 Enviar mensaje</button>
+            </form>
+            <div id="supportResponse" style="display: none; margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 YWEBAPK - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script>
+        // 🔥 CONFIGURACIÓN DE FIREBASE - CAMBIA ESTO POR TUS DATOS 🔥
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "TU_PROJECT.firebaseapp.com",
+            projectId: "TU_PROJECT_ID",
+            storageBucket: "TU_PROJECT.appspot.com",
+            messagingSenderId: "TU_SENDER_ID",
+            appId: "TU_APP_ID"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+[
+    {
+        "id": 1,
+        "name": "MiApp",
+        "version": "2.3.1",
+        "size": "12.4 MB",
+        "date": "2026-07-15",
+        "icon": "https://via.placeholder.com/80/3B82F6/FFFFFF?text=MA",
+        "description": "Aplicación principal con todas las funciones básicas y avanzadas.",
+        "requirements": "Android 6.0 o superior",
+        "changes": "Corrección de errores y mejoras de rendimiento.",
+        "downloads": 1520,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/3B82F6/FFFFFF?text=SS1",
+            "https://via.placeholder.com/300x500/EF4444/FFFFFF?text=SS2"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "FotoEditor",
+        "version": "4.1.0",
+        "size": "18.7 MB",
+        "date": "2026-07-14",
+        "icon": "https://via.placeholder.com/80/EF4444/FFFFFF?text=FE",
+        "description": "Edita tus fotos con filtros, recorte y ajustes profesionales.",
+        "requirements": "Android 7.0 o superior",
+        "changes": "Nuevos filtros y mejoras en la interfaz.",
+        "downloads": 890,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/EF4444/FFFFFF?text=SS1",
+            "https://via.placeholder.com/300x500/10B981/FFFFFF?text=SS2"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "NotasRapidas",
+        "version": "1.5.2",
+        "size": "5.2 MB",
+        "date": "2026-07-12",
+        "icon": "https://via.placeholder.com/80/10B981/FFFFFF?text=NR",
+        "description": "Toma notas rápidas con sincronización en la nube.",
+        "requirements": "Android 5.0 o superior",
+        "changes": "Sincronización automática y modo oscuro.",
+        "downloads": 430,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/10B981/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "RastreadorFit",
+        "version": "3.0.0",
+        "size": "24.1 MB",
+        "date": "2026-07-10",
+        "icon": "https://via.placeholder.com/80/F59E0B/FFFFFF?text=RF",
+        "description": "Monitorea tus pasos, calorías y ritmo cardíaco.",
+        "requirements": "Android 8.0 o superior, sensor de ritmo",
+        "changes": "Nuevo panel de estadísticas y gráficos.",
+        "downloads": 2100,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/F59E0B/FFFFFF?text=SS1",
+            "https://via.placeholder.com/300x500/3B82F6/FFFFFF?text=SS2",
+            "https://via.placeholder.com/300x500/EF4444/FFFFFF?text=SS3"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "ClimaPro",
+        "version": "2.1.3",
+        "size": "8.9 MB",
+        "date": "2026-07-08",
+        "icon": "https://via.placeholder.com/80/6366F1/FFFFFF?text=CP",
+        "description": "Pronóstico del tiempo detallado con radar y alertas.",
+        "requirements": "Android 6.0 o superior",
+        "changes": "Mejoras en la precisión del radar.",
+        "downloads": 670,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/6366F1/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "LockScreen",
+        "version": "1.0.1",
+        "size": "3.4 MB",
+        "date": "2026-07-05",
+        "icon": "https://via.placeholder.com/80/8B5CF6/FFFFFF?text=LS",
+        "description": "Pantalla de bloqueo personalizable con atajos.",
+        "requirements": "Android 7.0 o superior",
+        "changes": "Primera versión estable.",
+        "downloads": 150,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/8B5CF6/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "TraductorPro",
+        "version": "5.0.2",
+        "size": "14.6 MB",
+        "date": "2026-07-03",
+        "icon": "https://via.placeholder.com/80/EC4899/FFFFFF?text=TP",
+        "description": "Traduce texto y voz en más de 100 idiomas.",
+        "requirements": "Android 6.0 o superior",
+        "changes": "Soporte para traducción offline.",
+        "downloads": 940,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/EC4899/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "CalculadoraCient",
+        "version": "2.2.0",
+        "size": "6.1 MB",
+        "date": "2026-06-30",
+        "icon": "https://via.placeholder.com/80/14B8A6/FFFFFF?text=CC",
+        "description": "Calculadora científica con funciones avanzadas.",
+        "requirements": "Android 5.0 o superior",
+        "changes": "Nuevo modo de ecuaciones.",
+        "downloads": 320,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/14B8A6/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "MúsicaOffline",
+        "version": "3.1.1",
+        "size": "22.3 MB",
+        "date": "2026-06-28",
+        "icon": "https://via.placeholder.com/80/F97316/FFFFFF?text=MO",
+        "description": "Reproductor de música con soporte para descarga offline.",
+        "requirements": "Android 7.0 o superior",
+        "changes": "Mejoras en la gestión de listas de reproducción.",
+        "downloads": 1850,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/F97316/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "NoticiasFlash",
+        "version": "4.0.0",
+        "size": "9.8 MB",
+        "date": "2026-06-25",
+        "icon": "https://via.placeholder.com/80/8B5CF6/FFFFFF?text=NF",
+        "description": "Agregador de noticias con fuentes personalizables.",
+        "requirements": "Android 6.0 o superior",
+        "changes": "Interfaz rediseñada y modo lectura.",
+        "downloads": 760,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/8B5CF6/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "SeguridadVPN",
+        "version": "2.0.3",
+        "size": "11.2 MB",
+        "date": "2026-06-22",
+        "icon": "https://via.placeholder.com/80/22C55E/FFFFFF?text=SV",
+        "description": "VPN gratuita con protección de privacidad.",
+        "requirements": "Android 7.0 o superior",
+        "changes": "Mejoras en la conexión y estabilidad.",
+        "downloads": 1340,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/22C55E/FFFFFF?text=SS1"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "GestorArchivos",
+        "version": "1.8.4",
+        "size": "7.5 MB",
+        "date": "2026-06-20",
+        "icon": "https://via.placeholder.com/80/3B82F6/FFFFFF?text=GA",
+        "description": "Explorador de archivos con compresión y nube.",
+        "requirements": "Android 5.0 o superior",
+        "changes": "Soporte para archivos RAR y 7z.",
+        "downloads": 510,
+        "downloadUrl": "#",
+        "screenshots": [
+            "https://via.placeholder.com/300x500/3B82F6/FFFFFF?text=SS1"
+        ]
+    }
+]
