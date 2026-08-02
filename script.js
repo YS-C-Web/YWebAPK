@@ -13,16 +13,23 @@ const paginationControls = document.getElementById('paginationControls');
 const modal = document.getElementById('modal');
 const modalBody = document.getElementById('modalBody');
 const closeModalBtn = document.getElementById('closeModal');
-const menuToggle = document.getElementById('menuToggle');
-const sideMenu = document.getElementById('sideMenu');
-const closeMenu = document.getElementById('closeMenu');
-const overlay = document.getElementById('overlay');
+
+// Elementos del modal de imagen
+const imageModal = document.getElementById('imageModal');
+const imageModalContent = document.getElementById('imageModalContent');
+const imageModalClose = document.getElementById('imageModalClose');
 
 // Elementos de soporte
 const supportModal = document.getElementById('supportModal');
 const closeSupportModal = document.getElementById('closeSupportModal');
 const supportForm = document.getElementById('supportForm');
 const supportResponse = document.getElementById('supportResponse');
+
+// Elementos de menú
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+const closeMenu = document.getElementById('closeMenu');
+const overlay = document.getElementById('overlay');
 
 // Cargar APKs desde JSON
 fetch('data.json')
@@ -111,8 +118,8 @@ function renderApks() {
 
 function createApkCard(apk) {
     const iconHtml = apk.icon
-        ? `<img src="${apk.icon}" alt="${apk.name}" class="icon" />`
-        : `<div class="icon">${apk.name.charAt(0).toUpperCase()}</div>`;
+        ? `<img src="${apk.icon}" alt="${apk.name}" class="icon" onclick="openImageModal(event, '${apk.icon}')" style="cursor:pointer;" />`
+        : `<div class="icon" onclick="openImageModal(event, '')">${apk.name.charAt(0).toUpperCase()}</div>`;
     return `
         <div class="apk-card" data-id="${apk.id}" onclick="openModal(${apk.id})">
             ${iconHtml}
@@ -236,6 +243,33 @@ document.getElementById('menuContact').addEventListener('click', function(e) {
     alert('Contáctanos: ywebapk@example.com');
 });
 
+// ============ MODAL DE IMAGEN A PANTALLA COMPLETA ============
+
+function openImageModal(event, imageUrl) {
+    event.stopPropagation();
+    if (!imageUrl) {
+        alert('No hay imagen disponible');
+        return;
+    }
+    imageModalContent.src = imageUrl;
+    imageModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    imageModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+imageModalClose.addEventListener('click', closeImageModal);
+imageModal.addEventListener('click', function(e) {
+    if (e.target === imageModal) closeImageModal();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeImageModal();
+});
+
 // ============ MODAL DE APK ============
 
 function openModal(id) {
@@ -243,14 +277,14 @@ function openModal(id) {
     if (!apk) return;
 
     const iconHtml = apk.icon
-        ? `<img src="${apk.icon}" alt="${apk.name}" class="modal-icon" />`
+        ? `<img src="${apk.icon}" alt="${apk.name}" class="modal-icon" onclick="openImageModal(event, '${apk.icon}')" style="cursor:pointer;" />`
         : `<div class="modal-icon">${apk.name.charAt(0).toUpperCase()}</div>`;
 
     let screenshotsHtml = '';
     if (apk.screenshots && apk.screenshots.length > 0) {
         screenshotsHtml = `<div class="screenshots-container">`;
         apk.screenshots.forEach(url => {
-            screenshotsHtml += `<img src="${url}" alt="Captura de ${apk.name}" loading="lazy" />`;
+            screenshotsHtml += `<img src="${url}" alt="Captura de ${apk.name}" loading="lazy" onclick="openImageModal(event, '${url}')" style="cursor:pointer;" />`;
         });
         screenshotsHtml += `</div>`;
     }
