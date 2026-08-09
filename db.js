@@ -1,0 +1,84 @@
+// ============================================
+// db.js - Base de datos de APKs para YSWEBAPK
+// ============================================
+
+const APPS_DB = [
+  {
+    id: 1,
+    nombre: "4 Fotos 1 Palabra",
+    version: "1.0",
+    categoria: "juego",
+    descripcion: "Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
+    icono: "icons/4fotos1palabra.jpeg",
+    tamaño: "0.00 MB",
+    fecha: "----/--/--",
+    link: "apks/4fotos1palabra.apk",
+    screenshots: ["screenshots/4f1p1.jpg", "screenshots/4f1p2.jpg"],
+    enDesarrollo: true
+  },
+  {
+    id: 2,
+    nombre: "Contador de Dinero Profesional",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Aplicación profesional para contar y organizar tu dinero de manera rápida y eficiente.",
+    icono: "icons/Icocontpro.png",
+    tamaño: "4.67 MB",
+    fecha: "2026-02-15",
+    link: "apks/Contador_de_Dinero_Profesional.apk",
+    screenshots: ["screenshots/CdDP1.jpg", "screenshots/CdDP2.jpg"]
+  },
+  {
+    id: 3,
+    nombre: "Contador de Dinero Universal",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Contador de dinero universal con soporte para múltiples monedas y conversión en tiempo real.",
+    icono: "icons/IcoCdDU.png",  // Reutilizado para este, pero podría ser otro
+    tamaño: "5.06 MB",
+    fecha: "2026-02-14",
+    link: "apks/Contador_de_Dinero_Universal.apk",
+    screenshots: ["screenshots/CdDU1.jpg", "screenshots/CdDU2.jpg"]
+  },
+  {
+    id: 4,
+    nombre: "Conversor de Unidades",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Convierte fácilmente entre diferentes unidades de medida: longitud, peso, volumen, temperatura y más.",
+    icono: "icons/Icoconvunid.png",  // Icono de Conversor de Unidades
+    tamaño: "4.71 MB",
+    fecha: "2026-02-13",
+    link: "apks/Conversor_de_Unidades.apk",
+    screenshots: ["screenshots/CdU1.jpg", "screenshots/CdU2.jpg"]  // cdpu = Conversor De Peso Universal
+  },
+  {
+    id: 5,
+    nombre: "Velocímetro",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Mide la velocidad en tiempo real usando el GPS de tu dispositivo. Ideal para viajes y deportes.",
+    icono: "icons/Icovel.png",
+    tamaño: "5.02 MB",
+    fecha: "2026-02-12",
+    link: "apks/Velocimetro.apk",
+    screenshots: ["screenshots/Vel1.jpg", "screenshots/Vel2.jpg"]
+  },
+  {
+    id: 6,
+    nombre: "IPV (Mis Ventas)",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Gestiona el inventario de tus productos y controla tus ventas de forma sencilla. Registra productos con su precio, unidades, entradas y salidas. IPV calcula automáticamente el stock final, las unidades vendidas y el importe total. Ideal para pequeños negocios y emprendedores que necesitan un control eficiente de sus ventas diarias.",
+    icono: "icons/IcoIPV.png",
+    tamaño: "4.94 MB",
+    fecha: "2026-02-11",
+    link: "apks/IPV.apk",
+    screenshots: ["screenshots/IPV1.jpg", "screenshots/IPV2.jpg"]
+  }
+];
+
+// Si necesitas exportar para algún entorno, pero para web global es suficiente
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = APPS_DB;
+}
