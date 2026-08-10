@@ -24,9 +24,9 @@ const APPS_DB = [
     descripcion: "Aplicación profesional para contar y organizar tu dinero de manera rápida y eficiente.",
     icono: "icons/Icocontpro.png",
     tamaño: "4.67 MB",
-    fecha: "2026-02-15",
+    fecha: "2026-08-09",
     link: "apks/Contador_de_Dinero_Profesional.apk",
-    screenshots: ["screenshots/CdDP1.jpg", "screenshots/CdDP2.jpg"]
+    screenshots: ["screenshots/CdDP1.jpg", "screenshots/CdDP2.jpg"],
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const APPS_DB = [
     descripcion: "Contador de dinero universal con soporte para múltiples monedas y conversión en tiempo real.",
     icono: "icons/IcoCdDU.png",  // Reutilizado para este, pero podría ser otro
     tamaño: "5.06 MB",
-    fecha: "2026-02-14",
+    fecha: "2026-08-09",
     link: "apks/Contador_de_Dinero_Universal.apk",
     screenshots: ["screenshots/CdDU1.jpg", "screenshots/CdDU2.jpg"]
   },
@@ -48,7 +48,7 @@ const APPS_DB = [
     descripcion: "Convierte fácilmente entre diferentes unidades de medida: longitud, peso, volumen, temperatura y más.",
     icono: "icons/Icoconvunid.png",  // Icono de Conversor de Unidades
     tamaño: "4.71 MB",
-    fecha: "2026-02-13",
+    fecha: "2026-08-09",
     link: "apks/Conversor_de_Unidades.apk",
     screenshots: ["screenshots/CdU1.jpg", "screenshots/CdU2.jpg"]  // cdpu = Conversor De Peso Universal
   },
@@ -60,7 +60,7 @@ const APPS_DB = [
     descripcion: "Mide la velocidad en tiempo real usando el GPS de tu dispositivo. Ideal para viajes y deportes.",
     icono: "icons/Icovel.png",
     tamaño: "5.02 MB",
-    fecha: "2026-02-12",
+    fecha: "2026-08-09",
     link: "apks/Velocimetro.apk",
     screenshots: ["screenshots/Vel1.jpg", "screenshots/Vel2.jpg"]
   },
@@ -72,9 +72,35 @@ const APPS_DB = [
     descripcion: "Gestiona el inventario de tus productos y controla tus ventas de forma sencilla. Registra productos con su precio, unidades, entradas y salidas. IPV calcula automáticamente el stock final, las unidades vendidas y el importe total. Ideal para pequeños negocios y emprendedores que necesitan un control eficiente de sus ventas diarias.",
     icono: "icons/IcoIPV.png",
     tamaño: "4.94 MB",
-    fecha: "2026-02-11",
+    fecha: "2026-08-09",
     link: "apks/IPV.apk",
     screenshots: ["screenshots/IPV1.jpg", "screenshots/IPV2.jpg"]
+  },
+  {
+    id: 7,
+    nombre: "Bloc de Notas",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: ".",
+    icono: "icons/Icoblog.png",
+    tamaño: "0 MB",
+    fecha: ".",
+    link: "apks/",
+    screenshots: ["screenshots/0.jpg", "screenshots/0.jpg"],
+    enDesarrollo: true
+  },
+  {
+    id: 8,
+    nombre: "Vault",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: ".",
+    icono: "icons/Icovault.png",
+    tamaño: "0 MB",
+    fecha: ".",
+    link: "apks/",
+    screenshots: ["screenshots/0.jpg", "screenshots/0.jpg"],
+    enDesarrollo: true
   }
 ];
 
