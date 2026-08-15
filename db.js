@@ -101,6 +101,18 @@ const APPS_DB = [
     link: "apks/",
     screenshots: ["screenshots/0.jpg", "screenshots/0.jpg"],
     enDesarrollo: true
+  },
+  {
+    id: 9,
+    nombre: "EtecsaCodes",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Aplicación diseñada para acceder rápida y fácilmente a los códigos USSD de ETECSA en Cuba.",
+    icono: "icons/IcoEtecsaCodes.png",
+    tamaño: "4.44 MB",
+    fecha: "2026/08/15",
+    link: "apks/EtecsaCodes.apk",
+    screenshots: ["screenshots/EtecsaCodes2.jpg", "screenshots/EtecsaCodes1.jpg"]
   }
 ];
 
