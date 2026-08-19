@@ -33,7 +33,7 @@ const APPS_DB = [
     nombre: "Contador de Dinero Universal",
     version: "1.0",
     categoria: "utilidad",
-    descripcion: "Contador de dinero universal con soporte para múltiples monedas y conversión en tiempo real.",
+    descripcion: "Contador de dinero universal con soporte para múltiples monedas.",
     icono: "icons/IcoCdDU.png",  // Reutilizado para este, pero podría ser otro
     tamaño: "5.06 MB",
     fecha: "2026-08-09",
@@ -67,14 +67,14 @@ const APPS_DB = [
   {
     id: 6,
     nombre: "IPV (Mis Ventas)",
-    version: "1.0",
+    version: "2.0",
     categoria: "utilidad",
     descripcion: "Gestiona el inventario de tus productos y controla tus ventas de forma sencilla. Registra productos con su precio, unidades, entradas y salidas. IPV calcula automáticamente el stock final, las unidades vendidas y el importe total. Ideal para pequeños negocios y emprendedores que necesitan un control eficiente de sus ventas diarias.",
     icono: "icons/IcoIPV.png",
-    tamaño: "4.94 MB",
-    fecha: "2026-08-09",
+    tamaño: "5.02 MB",
+    fecha: "2026-08-18",
     link: "apks/IPV.apk",
-    screenshots: ["screenshots/IPV1.jpg", "screenshots/IPV2.jpg"]
+    screenshots: ["screenshots/IPV1.jpg", "screenshots/IPV2.jpg", "screenshots/IPV3.jpg", "screenshots/IPV4.jpg", "screenshots/IPV5.jpg"]
   },
   {
     id: 7,
