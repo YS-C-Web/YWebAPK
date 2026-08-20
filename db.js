@@ -55,7 +55,7 @@ const APPS_DB = [
   {
     id: 5,
     nombre: "Velocímetro",
-    version: "1.0",
+    version: "1.6",
     categoria: "utilidad",
     descripcion: "Mide la velocidad en tiempo real usando el GPS de tu dispositivo. Ideal para viajes y deportes.",
     icono: "icons/Icovel.png",
