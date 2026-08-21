@@ -6,7 +6,7 @@ const APPS_DB = [
   {
     id: 1,
     nombre: "4 Fotos 1 Palabra",
-    version: "1.1",
+    version: "1.0",
     categoria: "juego",
     descripcion: "Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
     icono: "icons/4fotos1palabra.jpeg",
@@ -14,6 +14,7 @@ const APPS_DB = [
     fecha: ".",
     link: "apks/4fotos1palabra.apk",
     screenshots: ["screenshots/4f1p1.jpg", "screenshots/4f1p2.jpg"],
+    enDesarrollo: true
   },
   {
     id: 2,
