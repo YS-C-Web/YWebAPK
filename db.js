@@ -112,7 +112,7 @@ const APPS_DB = [
     tamaño: "4.43 MB",
     fecha: "2026/08/15",
     link: "apks/EtecsaCodes.apk",
-    screenshots: ["screenshots/EtecsaCodes2.jpg", "screenshots/EtecsaCodes1.jpg"]
+    screenshots: ["screenshots/EtecsaCodes0.gif", "screenshots/EtecsaCodes2.jpg", "screenshots/EtecsaCodes1.jpg"]
   }
 ];
 
