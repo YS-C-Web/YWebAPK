@@ -113,6 +113,31 @@ const APPS_DB = [
     fecha: "2026/08/15",
     link: "apks/EtecsaCodes.apk",
     screenshots: ["screenshots/EtecsaCodes0.gif", "screenshots/EtecsaCodes2.jpg", "screenshots/EtecsaCodes1.jpg"]
+  },
+  {
+    id: 10,
+    nombre: "Mi Almacen",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Proximamente...",
+    icono: "icons/",
+    tamaño: "0 MB",
+    fecha: "",
+    link: "apks/",
+    screenshots: ["screenshots/.gif", "screenshots/.jpg", "screenshots/.jpg"],
+    enDesarrollo: true
+  },
+  {
+    id: 11,
+    nombre: "Mis Entregas",
+    version: "1.0",
+    categoria: "utilidad",
+    descripcion: "Mis Entregas es una herramienta práctica y sencilla para gestionar tus pedidos y entregas diarias de manera eficiente. Ideal para repartidores, vendedores, comerciantes y cualquier persona que necesite llevar un control de productos y clientes.",
+    icono: "icons/IcoMEntregas.png",
+    tamaño: "4.28 MB",
+    fecha: "",
+    link: "apks/Mis_Entregas.apk",
+    screenshots: ["screenshots/MEntregas0.gif", "screenshots/MEntregas1.jpg"]
   }
 ];
 
