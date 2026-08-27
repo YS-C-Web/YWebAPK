@@ -135,7 +135,7 @@ const APPS_DB = [
     descripcion: "Mis Entregas es una herramienta práctica y sencilla para gestionar tus pedidos y entregas diarias de manera eficiente. Ideal para repartidores, vendedores, comerciantes y cualquier persona que necesite llevar un control de productos y clientes.",
     icono: "icons/IcoMEntregas.png",
     tamaño: "4.34 MB",
-    fecha: "",
+    fecha: "2026/08/24",
     link: "apks/Mis_Entregas.apk",
     screenshots: ["screenshots/MEntregas0.gif", "screenshots/MEntregas1.jpg"]
   }
