@@ -130,7 +130,7 @@ const APPS_DB = [
   {
     id: 11,
     nombre: "Mis Entregas",
-    version: "1.0",
+    version: "1.5",
     categoria: "utilidad",
     descripcion: "Mis Entregas es una herramienta práctica y sencilla para gestionar tus pedidos y entregas diarias de manera eficiente. Ideal para repartidores, vendedores, comerciantes y cualquier persona que necesite llevar un control de productos y clientes.",
     icono: "icons/IcoMEntregas.png",
