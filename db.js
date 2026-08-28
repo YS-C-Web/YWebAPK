@@ -31,7 +31,7 @@ const APPS_DB = [
   {
     id: 3,
     nombre: "Contador de Dinero Universal",
-    version: "1.3",
+    version: "1.4",
     categoria: "utilidad",
     descripcion: "Contador de dinero universal con soporte para múltiples monedas.",
     icono: "icons/IcoCdDU.png",  // Reutilizado para este, pero podría ser otro
