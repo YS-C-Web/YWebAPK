@@ -10,10 +10,10 @@ const APPS_DB = [
     categoria: "juego",
     descripcion: "Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
     icono: "icons/4fotos1palabra.jpeg",
-    tamaño: "0.00 MB",
-    fecha: ".",
-    link: "apks/4fotos1palabra.apk",
-    screenshots: ["screenshots/4f1p1.jpg", "screenshots/4f1p2.jpg"],
+    tamaño: "40.18 MB",
+    fecha: "2026/08/",
+    link: "https://ysw.infinityfree.me/ArchivosExternos/4%20fotos%201%20palabra.apk",
+    screenshots: ["screenshots/4f1p0.gif", "screenshots/4f1p1.jpg"],
     enDesarrollo: true
   },
   {
@@ -130,7 +130,7 @@ const APPS_DB = [
   {
     id: 11,
     nombre: "Mis Entregas",
-    version: "1.5",
+    version: "1.6",
     categoria: "utilidad",
     descripcion: "Mis Entregas es una herramienta práctica y sencilla para gestionar tus pedidos y entregas diarias de manera eficiente. Ideal para repartidores, vendedores, comerciantes y cualquier persona que necesite llevar un control de productos y clientes.",
     icono: "icons/IcoMEntregas.png",
