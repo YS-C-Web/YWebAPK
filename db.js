@@ -67,7 +67,7 @@ const APPS_DB = [
   {
     id: 6,
     nombre: "IPV (Mis Ventas)",
-    version: "2.2.0",
+    version: "2.2",
     categoria: "utilidad",
     descripcion: "Gestiona el inventario de tus productos y controla tus ventas de forma sencilla. Registra productos con su precio, unidades, entradas y salidas. IPV calcula automáticamente el stock final, las unidades vendidas y el importe total. Ideal para pequeños negocios y emprendedores que necesitan un control eficiente de sus ventas diarias.",
     icono: "icons/IcoIPV.png",
@@ -130,7 +130,7 @@ const APPS_DB = [
   {
     id: 11,
     nombre: "Mis Entregas",
-    version: "1.6",
+    version: "2.0",
     categoria: "utilidad",
     descripcion: "Mis Entregas es una herramienta práctica y sencilla para gestionar tus pedidos y entregas diarias de manera eficiente. Ideal para repartidores, vendedores, comerciantes y cualquier persona que necesite llevar un control de productos y clientes.",
     icono: "icons/IcoMEntregas.png",
