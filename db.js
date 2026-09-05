@@ -67,7 +67,7 @@ const APPS_DB = [
   {
     id: 6,
     nombre: "IPV (Mis Ventas)",
-    version: "2.1.0",
+    version: "2.2.0",
     categoria: "utilidad",
     descripcion: "Gestiona el inventario de tus productos y controla tus ventas de forma sencilla. Registra productos con su precio, unidades, entradas y salidas. IPV calcula automáticamente el stock final, las unidades vendidas y el importe total. Ideal para pequeños negocios y emprendedores que necesitan un control eficiente de sus ventas diarias.",
     icono: "icons/IcoIPV.png",
