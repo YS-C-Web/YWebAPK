@@ -10,11 +10,10 @@ const APPS_DB = [
     categoria: "juego",
     descripcion: "Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
     icono: "icons/4fotos1palabra.jpeg",
-    tamaño: "40.18 MB",
-    fecha: "2026/08/",
-    link: "https://ysw.infinityfree.me/ArchivosExternos/4%20fotos%201%20palabra.apk",
-    screenshots: ["screenshots/4f1p0.gif", "screenshots/4f1p1.jpg"],
-    enDesarrollo: true
+    tamaño: "42.13 MB",
+    fecha: "2026/08/6",
+    link: "https://sfile.co/32ylqqziZ1I",
+    screenshots: ["screenshots/4f1p1.jpg", "screenshots/4f1p2.jpg"]
   },
   {
     id: 2,
