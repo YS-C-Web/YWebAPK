@@ -8,7 +8,7 @@ const APPS_DB = [
     nombre: "4 Fotos 1 Palabra",
     version: "1.0",
     categoria: "juego",
-    descripcion: "Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
+    descripcion: "<center><b style='color:#bb0;'>Atención<br>El enlace de descarga te llevara a otra pagina para descargar la apk, lamentablemente el servidor en el que esta alojada mi web no me permitio subir esta apk porque supera los 25MB.</b></center><br>Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
     icono: "icons/4fotos1palabra.jpeg",
     tamaño: "42.13 MB",
     fecha: "2026/08/6",
