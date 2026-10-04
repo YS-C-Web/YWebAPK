@@ -147,7 +147,7 @@ const APPS_DB = [
     icono: "icons/IcoWarlokGame.png",
     tamaño: "8.96 MB",
     fecha: "2026/08/24",
-    link: "apks/WarlokGame-Online.apk",
+    link: "apks/WarlokGame-OnLine.apk",
     screenshots: ["screenshots/WarlokGame1.jpg", "screenshots/WarlokGame2.jpg"]
   }
 ];
