@@ -8,7 +8,7 @@ const APPS_DB = [
     nombre: "4 Fotos 1 Palabra",
     version: "1.0",
     categoria: "juego",
-    descripcion: "<center><b style='color:#bb0;'>Atención<br>El enlace de descarga te llevara a otra pagina para descargar la apk, lamentablemente el servidor en el que esta alojada mi web no me permitio subir esta apk porque supera los 25MB.</b></center><br>Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
+    descripcion: "<center><b style='color:#bb0;'>⚠️<br>¡Atención!<br>El enlace de descarga te llevara a otra pagina para descargar la apk, lamentablemente el servidor en el que esta alojada mi web no me permitio subir esta apk porque supera los 25MB.</b></center><br>Te mostraremos 4 imagenes, según su contexto debes adivinar una palabra con las letras que te daremos.",
     icono: "icons/4fotos1palabra.jpeg",
     tamaño: "42.13 MB",
     fecha: "2026/08/6",
@@ -137,6 +137,18 @@ const APPS_DB = [
     fecha: "2026/08/24",
     link: "apks/Mis_Entregas.apk",
     screenshots: ["screenshots/MEntregas0.gif", "screenshots/MEntregas1.jpg"]
+  },
+  {
+    id: 12,
+    nombre: "Brujo de las Sombras<br><b style='font-size:12px;'>La Saga del Último Pacto</b>",
+    version: "1.0",
+    categoria: "juego",
+    descripcion: "MMORPG de acción y aventura.",
+    icono: "icons/IcoWarlokGame.png",
+    tamaño: "8.96 MB",
+    fecha: "2026/08/24",
+    link: "apks/WarlokGame-Online.apk",
+    screenshots: ["screenshots/WarlokGame1.jpg", "screenshots/WarlokGame2.jpg"]
   }
 ];
 
