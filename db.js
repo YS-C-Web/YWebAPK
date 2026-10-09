@@ -143,7 +143,7 @@ const APPS_DB = [
     nombre: "Brujo de las Sombras<br><b style='font-size:12px;'>La Saga del Último Pacto</b>",
     version: "1.0",
     categoria: "juego",
-    descripcion: "MMORPG de acción y aventura.",
+    descripcion: "Juego en Desarrollo<br><b>Version de Pruevas</b><br>MMORPG de acción y aventura.",
     icono: "icons/IcoWarlokGame.png",
     tamaño: "8.96 MB",
     fecha: "2026/08/24",
