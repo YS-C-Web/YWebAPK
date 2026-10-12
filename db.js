@@ -143,7 +143,7 @@ const APPS_DB = [
     nombre: "Brujo de las Sombras",
     version: "1.0",
     categoria: "juego",
-    descripcion: "Juego en Desarrollo<br><b>Version de Pruevas</b><br>MMORPG de acción y aventura.",
+    descripcion: "Juego en Desarrollo<br><b>Version de Pruevas</b><br>MMORPG de acción y aventura.<br><a href='https://ys-c-web.github.io/YWebAPK/WarlokGame/Gu%C3%ADa/Index.html'>Ver Guía</a>",
     icono: "icons/IcoWarlokGame.png",
     tamaño: "8.96 MB",
     fecha: "2026/08/24",
