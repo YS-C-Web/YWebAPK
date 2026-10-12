@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Brujo de las Sombras — Descarga y Guía</title>
+<style>
+  :root {
+    --bg: #0b0714;
+    --bg2: #150c28;
+    --bg3: #1a0a33;
+    --purple: #a855f7;
+    --purple-dark: #6d28d9;
+    --purple-light: #c084fc;
+    --gold: #fbbf24;
+    --red: #ef4444;
+    --green: #4ade80;
+    --blue: #60a5fa;
+    --text: #e5e7eb;
+    --text-dim: #9ca3af;
+    --border: #2d2640;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(168,85,247,0.15), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(109,40,217,0.12), transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(30,10,60,0.4), transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    background: linear-gradient(90deg, var(--purple-light), var(--gold), var(--purple-light));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    text-shadow: 0 0 40px rgba(168,85,247,0.35);
+  }
+
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  .hero .subtitle {
+    color: var(--text-dim);
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    margin-bottom: 25px;
+  }
+
+  .hero .badge {
+    display: inline-block;
+    background: rgba(168,85,247,0.2);
+    border: 1px solid var(--purple);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.78rem;
+    color: var(--purple-light);
+    margin-bottom: 25px;
+  }
+
+  .btn-download {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #e94560, #c0392b);
+    padding: 16px 28px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+    margin: 0 auto 20px;
+    max-width: 340px;
+  }
+
+  .btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(233, 69, 96, 0.6);
+    background: linear-gradient(90deg, #ff5c77, #e94560);
+  }
+
+  .btn-download:active {
+    transform: translateY(0);
+  }
+
+  /* ============================================================
+     SERVER INFO + BOTÓN COPIAR
+     ============================================================ */
+  .server-info {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 30px;
+    background: rgba(20,14,34,0.85);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  }
+
+  .server-info .label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .server-info .label .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulseDot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .server-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .server-url {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--purple-light);
+    background: rgba(0,0,0,0.4);
+    padding: 9px 11px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    user-select: all;
+    -webkit-user-select: all;
+  }
+
+  .btn-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--purple-dark);
+    background: rgba(168,85,247,0.2);
+    color: var(--purple-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+
+  .btn-copy:hover {
+    background: rgba(168,85,247,0.4);
+    border-color: var(--purple);
+    transform: scale(1.05);
+  }
+
+  .btn-copy:active {
+    transform: scale(0.95);
+  }
+
+  .btn-copy.copied {
+    background: rgba(34,197,94,0.35);
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .server-hint {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .server-hint strong { color: var(--gold); }
+
+  .media {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(168,85,247,0.25);
+  }
+
+  .media img,
+  .media video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  video {
+    background: #000;
+  }
+
+  .scroll-hint {
+    display: block;
+    margin: 25px auto 0;
+    color: var(--purple-light);
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0.7;
+    animation: bounce 2s ease-in-out infinite;
+    text-align: center;
+  }
+
+  .scroll-hint:hover { opacity: 1; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ============================================================
+     NAVEGACIÓN
+     ============================================================ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,7,20,0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar { display: none; }
+
+  nav a {
+    display: inline-block;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    margin: 0 2px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    font-weight: bold;
+  }
+
+  nav a:hover, nav a:active {
+    background: rgba(168,85,247,0.25);
+    color: var(--purple-light);
+  }
+
+  /* ============================================================
+     GUÍA
+     ============================================================ */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 80px;
+  }
+
+  .guia-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--purple-dark);
+  }
+
+  .guia-header h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--purple-light);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .guia-header p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  section {
+    margin-bottom: 50px;
+    scroll-margin-top: 60px;
+  }
+
+  section h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    color: var(--purple-light);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--purple-dark);
+    padding-bottom: 10px;
+  }
+
+  section h2 .ico { font-size: 1.3em; }
+
+  section h3 {
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin: 20px 0 8px;
+    font-weight: bold;
+  }
+
+  section p {
+    color: var(--text);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  section ul, section ol {
+    padding-left: 22px;
+    margin-bottom: 12px;
+  }
+
+  section li {
+    margin-bottom: 5px;
+    font-size: 0.93rem;
+  }
+
+  strong { color: var(--gold); }
+  em { color: var(--purple-light); font-style: normal; }
+
+  .card {
+    background: rgba(26,10,51,0.55);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+
+  .card.highlight {
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(168,85,247,0.15);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 400px;
+  }
+
+  th {
+    background: rgba(109,40,217,0.35);
+    color: var(--purple-light);
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 9px 10px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: rgba(0,0,0,0.2); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .chip {
+    background: rgba(26,10,51,0.7);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .chip:hover {
+    border-color: var(--purple);
+    transform: translateY(-2px);
+  }
+
+  .chip .ico {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .chip .name {
+    font-size: 0.85rem;
+    color: var(--purple-light);
+    font-weight: bold;
+  }
+
+  .chip .desc {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+
+  .rarity {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .r-comun { background: #6b7280; }
+  .r-poco { background: #16a34a; }
+  .r-raro { background: #2563eb; }
+  .r-epico { background: #9333ea; }
+  .r-legend { background: #d97706; }
+  .r-mitico { background: #e11d48; }
+  .r-ancestral { background: linear-gradient(90deg, #fca5a5, #ef4444); }
+
+  .callout {
+    background: linear-gradient(90deg, rgba(168,85,247,0.15), rgba(168,85,247,0.05));
+    border-left: 4px solid var(--purple);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+  }
+
+  .callout.tip  { border-left-color: var(--green);  background: linear-gradient(90deg, rgba(74,222,128,0.15), rgba(74,222,128,0.03)); }
+  .callout.warn { border-left-color: var(--red);    background: linear-gradient(90deg, rgba(239,68,68,0.15), rgba(239,68,68,0.03)); }
+  .callout.gold { border-left-color: var(--gold);   background: linear-gradient(90deg, rgba(251,191,36,0.15), rgba(251,191,36,0.03)); }
+  .callout.info { border-left-color: var(--blue);   background: linear-gradient(90deg, rgba(96,165,250,0.15), rgba(96,165,250,0.03)); }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .step {
+    display: flex;
+    gap: 12px;
+    background: rgba(26,10,51,0.55);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .step .num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+  .step .txt {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer .heart { color: var(--red); }
+
+  #top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(168,85,247,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+    z-index: 200;
+  }
+
+  #top.show { opacity: 1; pointer-events: auto; }
+  #top:active { transform: scale(0.9); }
+
+  .nov {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: #fff;
+    margin-left: 6px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  .nov.blue  { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+  .nov.gold  { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+  #copyToast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 24px rgba(34,197,94,0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 300;
+    pointer-events: none;
+  }
+
+  #copyToast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (max-width: 500px) {
+    main { padding: 20px 14px 60px; }
+    section { margin-bottom: 40px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .chip .ico { font-size: 1.3rem; }
+    .chip .name { font-size: 0.78rem; }
+    th, td { padding: 7px 8px; font-size: 0.8rem; }
+    .hero { padding: 20px 14px; }
+    .btn-download { padding: 14px 20px; font-size: 1rem; }
+    .server-url { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     LANDING
+     ============================================================ -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>🧙‍♂️ Brujo de las Sombras</h1>
+    <p class="subtitle">Un RPG de acción 2D con 9 reinos, hechizos, jefes, crafteo y secretos.</p>
+    <div class="badge">🎮 9 reinos · 9 hechizos · 48 logros · 11 jefes</div>
+
+    <a class="btn-download" href="../../apks/WarlokGame.apk" download>⬇ Descargar Juego</a>
+
+    <!-- SERVIDOR -->
+    <div class="server-info">
+      <div class="label">
+        <span class="dot"></span>
+        Servidor del juego
+      </div>
+      <div class="server-row">
+        <div class="server-url" id="serverUrl">http://wysgame.infinityfree.me</div>
+        <button class="btn-copy" id="btnCopyServer" title="Copiar dirección" aria-label="Copiar dirección">📋</button>
+      </div>
+      <div class="server-hint">
+        💡 El APK se conecta a este servidor para las funciones online (multijugador, chat, clanes, PvP, mercado).
+      </div>
+    </div>
+
+    <div class="media">
+      <img src="Portada.png" alt="Portada del juego Brujo de las Sombras">
+    </div>
+
+    <div class="media">
+      <video id="videogame" poster="Portada.png" controls muted loop playsinline>
+        <source src="Video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
+
+    <a href="#guia" class="scroll-hint">▼ Baja para ver la guía completa ▼</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     NAVEGACIÓN
+     ============================================================ -->
+<nav>
+  <a href="#intro">Inicio</a>
+  <a href="#online">Online</a>
+  <a href="#controles">Controles</a>
+  <a href="#personaje">Personaje</a>
+  <a href="#buffs">Buffs</a>
+  <a href="#hechizos">Hechizos</a>
+  <a href="#talentos">Talentos</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#familiares">Familiares</a>
+  <a href="#monturas">Monturas</a>
+  <a href="#reinos">Reinos</a>
+  <a href="#enemigos">Enemigos</a>
+  <a href="#mazmorras">Mazmorras</a>
+  <a href="#pueblos">Pueblos</a>
+  <a href="#misiones">Misiones</a>
+  <a href="#crafteo">Crafteo</a>
+  <a href="#pesca">Pesca</a>
+  <a href="#herrería">Herrería</a>
+  <a href="#arena">Arena</a>
+  <a href="#pvp">PvP</a>
+  <a href="#logros">Logros</a>
+  <a href="#clanes">Clanes</a>
+  <a href="#clima">Clima</a>
+  <a href="#secretos">Secretos</a>
+  <a href="#consejos">Consejos</a>
+</nav>
+
+<!-- ============================================================
+     GUÍA
+     ============================================================ -->
+<main id="guia">
+
+  <div class="guia-header">
+    <h2>📖 Guía Completa</h2>
+    <p>Todo lo que necesitas saber para dominar Brujo de las Sombras.</p>
+  </div>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <h2><span class="ico">🎮</span> ¿Qué es Brujo de las Sombras?</h2>
+    <p>Un <strong>RPG de acción 2D con vista superior</strong> para Android. Controlas a un <em>Brujo</em> que debe sobrevivir, subir de nivel, derrotar jefes, explorar <strong>9 reinos</strong>, saquear mazmorras, pescar, forjar, luchar en arenas y desbloquear secretos.</p>
+    <div class="callout">
+      <strong>Ideal para:</strong> fans de ARPGs con progresión profunda, crafting, coleccionables y jefes desafiantes.
+    </div>
+    <div class="callout info">
+      📱 <strong>Solo disponible para Android.</strong> Descarga el APK e instálalo en tu dispositivo.
+    </div>
+  </section>
+
+  <!-- ONLINE -->
+  <section id="online">
+    <h2><span class="ico">🌐</span> Modo Online <span class="nov">NUEVO</span></h2>
+    <p>El APK incluye un <strong>modo online opcional</strong> que se conecta al servidor oficial para desbloquear funciones multijugador.</p>
+
+    <h3>🌐 Servidor Oficial</h3>
+    <div class="server-info">
+      <div class="label">
+        <span class="dot"></span>
+        Dirección del servidor
+      </div>
+      <div class="server-row">
+        <div class="server-url" id="serverUrl2">http://wysgame.infinityfree.me</div>
+        <button class="btn-copy" id="btnCopyServer2" title="Copiar dirección" aria-label="Copiar dirección">📋</button>
+      </div>
+      <div class="server-hint">
+        Copia esta dirección y pégala dentro del APK cuando se te pida conectar al servidor.
+      </div>
+    </div>
+
+    <h3>Flujo Online desde el APK</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div class="txt"><strong>Login / Registro / Recuperar</strong> — Desde la pantalla inicial del APK puedes crear cuenta nueva o iniciar sesión en una existente.</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="txt"><strong>Hub del jugador</strong> — Al entrar verás un panel con: tus datos (vida, maná, oro, XP, clase, reino), anuncios del servidor, jugadores conectados ordenados por ELO, y gestión de cuenta (cambiar email/contraseña, eliminar cuenta).</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div class="txt"><strong>⚔ Entrar al mundo</strong> — Al pulsar el botón grande, se carga tu partida desde el servidor y comienzas a jugar.</div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div class="txt"><strong>🚪 Cerrar sesión</strong> — Al cerrar sesión, la partida se guarda en la nube y vuelves a la pantalla de login.</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      ☁️ <strong>Guardado en la nube:</strong> cuando juegas online, tu progreso se guarda automáticamente cada 25 segundos y al cerrar sesión. Al volver a entrar, se carga tu save del servidor.
+    </div>
+
+    <h3>Características del modo online</h3>
+    <ul>
+      <li><strong>Multijugador:</strong> ves a otros brujos moverse por el mundo en tiempo real.</li>
+      <li><strong>Enemigos compartidos:</strong> varios jugadores pueden golpear al mismo enemigo y todos ganan recompensa si lo taggean.</li>
+      <li><strong>Clima sincronizado:</strong> el clima es igual para todos los del mismo reino.</li>
+      <li><strong>Chat global / reino / clan:</strong> con moderación automática y reportes.</li>
+      <li><strong>Intercambio (trade):</strong> entre jugadores cercanos.</li>
+      <li><strong>PvP:</strong> duelos cercanos y cola de arena 1v1.</li>
+      <li><strong>Ranking por ELO:</strong> visible en el hub y en el panel de ranking.</li>
+      <li><strong>Mercado P2P:</strong> vende items a otros jugadores (5% de comisión).</li>
+      <li><strong>Hermandades:</strong> funda o únete a un clan con perks, donaciones y banco compartido.</li>
+      <li><strong>Logros globales:</strong> "Primero en desbloquear X" en el chat global.</li>
+      <li><strong>Diario de aventura:</strong> historial completo de tu partida.</li>
+    </ul>
+
+    <h3>Seguridad de la cuenta</h3>
+    <ul>
+      <li><strong>Cambiar email</strong> — necesita la contraseña actual para confirmar.</li>
+      <li><strong>Cambiar contraseña</strong> — mínimo 6 caracteres, distinta a la actual.</li>
+      <li><strong>Eliminar cuenta</strong> — permanente, requiere escribir "ELIMINAR" + contraseña. Se borran todos tus datos: partida, inventario, oro, logros, hermandad, mercado, estadísticas PvP.</li>
+      <li><strong>Rate limiting:</strong> máximo 10 intentos de login cada 15 minutos por IP. Máximo 5 registros por hora.</li>
+    </ul>
+  </section>
+
+  <!-- CONTROLES -->
+  <section id="controles">
+    <h2><span class="ico">🕹️</span> Controles</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Acción</th><th>Cómo se hace</th></tr></thead>
+        <tbody>
+          <tr><td>Moverse</td><td>Joystick virtual (abajo izquierda de la pantalla)</td></tr>
+          <tr><td>Lanzar hechizo</td><td>Toca el botón del hechizo. Mantén pulsado para auto-lanzar cada 400 ms</td></tr>
+          <tr><td>Hablar / Interactuar</td><td>Botón "Hablar" que aparece al acercarte a NPCs o portales</td></tr>
+          <tr><td>Montura</td><td>Botón 🐎 al aprender una montura</td></tr>
+          <tr><td>Pesca / Forja / Arena</td><td>Botones contextuales que aparecen al acercarte</td></tr>
+          <tr><td>Menú flotante</td><td>Botón ☰ debajo de las barras superiores</td></tr>
+          <tr><td>Mapa completo</td><td>Toca el minimapa (esquina superior)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout tip">
+      💡 <strong>Consejo pro:</strong> mantener pulsado un hechizo lo lanza automáticamente cada 400 ms.
+    </div>
+  </section>
+
+  <!-- PERSONAJE -->
+  <section id="personaje">
+    <h2><span class="ico">👤</span> Personaje</h2>
+    <h3>Estadísticas base</h3>
+    <ul>
+      <li><strong>Vida (HP):</strong> 130 + 20 por nivel</li>
+      <li><strong>Maná (MP):</strong> 90 + 13 por nivel</li>
+      <li><strong>Ataque (ATQ):</strong> 6 + 1.2 por nivel</li>
+      <li><strong>Defensa (DEF):</strong> 0 + 0.9 por nivel</li>
+      <li><strong>Inteligencia (INT):</strong> 5 + 1.6 por nivel (aumenta daño mágico)</li>
+      <li><strong>Crítico:</strong> 5% base · Daño crítico 150%</li>
+      <li><strong>Robo de vida:</strong> 0% base</li>
+    </ul>
+
+    <h3>Barras adicionales</h3>
+    <ul>
+      <li>🍖 <strong>Hambre:</strong> baja con el tiempo. Si llega a 0 pierdes HP.</li>
+      <li>💧 <strong>Sed:</strong> baja con el tiempo. Si llega a 0 pierdes HP más rápido.</li>
+      <li>😴 <strong>Fatiga:</strong> baja al moverte, sube al estar quieto. Con fatiga baja te mueves más lento.</li>
+    </ul>
+
+    <h3>Subclases (nivel 20)</h3>
+    <div class="grid">
+      <div class="chip">
+        <span class="ico">💀</span>
+        <div class="name">Nigromante</div>
+        <div class="desc">+10% INT · Esqueletos fuertes · Drenaje mejorado</div>
+      </div>
+      <div class="chip">
+        <span class="ico">🔥</span>
+        <div class="name">Pirómano</div>
+        <div class="desc">+15% INT · +40% Aliento Infernal · Nova quema</div>
+      </div>
+      <div class="chip">
+        <span class="ico">🩸</span>
+        <div class="name">Sangromante</div>
+        <div class="desc">+15% robo de vida · +3 HP/s · Drenaje duplica curación</div>
+      </div>
+    </div>
+
+    <h3>Skins del Brujo <span class="nov blue">ACTUALIZADO</span></h3>
+    <p>Personaliza tu apariencia. Se compra con oro y se guarda en tu cuenta online.</p>
+    <div class="grid">
+      <div class="chip"><span class="ico">🧙‍♀️</span><div class="name">Bruja Aprendiz</div><div class="desc">Gratis desde Nv 2</div></div>
+      <div class="chip"><span class="ico">🧙‍♂️</span><div class="name">Brujo Errante</div><div class="desc">Gratis desde Nv 2</div></div>
+      <div class="chip"><span class="ico">🌑</span><div class="name">Bruja Sombría</div><div class="desc">Nv 20 · 1.500 oro</div></div>
+      <div class="chip"><span class="ico">🌚</span><div class="name">Brujo Sombrío</div><div class="desc">Nv 20 · 1.500 oro</div></div>
+    </div>
+  </section>
+
+  <!-- BUFFS -->
+  <section id="buffs">
+    <h2><span class="ico">⏱️</span> Buffs temporales <span class="nov">NUEVO</span></h2>
+    <p>Cuando tienes un <strong>buff, debuff o efecto temporal activo</strong>, aparece un <strong>icono en la parte inferior central</strong> con el tiempo restante:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Icono</th><th>Efecto</th><th>Duración</th></tr></thead>
+        <tbody>
+          <tr><td>🌑</td><td>Forma de Sombras (+50% daño)</td><td>15-25s</td></tr>
+          <tr><td>🛡</td><td>Escudo Arcano (absorbe daño)</td><td>Hasta agotarse</td></tr>
+          <tr><td>🐺</td><td>Transformación Lobo</td><td>8s</td></tr>
+          <tr><td>⚡</td><td>Combo activo (×N daño)</td><td>1.2s</td></tr>
+          <tr><td>💀</td><td>Debilitado (-20% stats)</td><td>30s</td></tr>
+          <tr><td>🔮</td><td>Runa activa</td><td>Depende de la runa</td></tr>
+          <tr><td>🕯</td><td>Pacto oscuro</td><td>Permanente (mientras activo)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      📍 La barra se coloca encima del joystick virtual. Si tienes muchos buffs a la vez, se envuelven en varias filas.
+    </div>
+  </section>
+
+  <!-- HECHIZOS -->
+  <section id="hechizos">
+    <h2><span class="ico">✨</span> Hechizos (9)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Hechizo</th><th>Coste</th><th>CD</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>Descarga Sombría</td><td>8</td><td>0.65s</td><td>Proyectil mágico básico</td></tr>
+          <tr><td>1</td><td>Nova de Sombras</td><td>22</td><td>6s</td><td>Explosión circular</td></tr>
+          <tr><td>2</td><td>Drenar Vida</td><td>18</td><td>4s</td><td>Daño + curación</td></tr>
+          <tr><td>3</td><td>Aliento Infernal</td><td>28</td><td>9s</td><td>Cono de fuego</td></tr>
+          <tr><td>4</td><td>Invocar Esqueleto</td><td>35</td><td>20s</td><td>Aliado que lucha 25s</td></tr>
+          <tr><td>5</td><td>Forma de Sombras</td><td>40</td><td>60s</td><td>15s +50% daño</td></tr>
+          <tr><td>6</td><td>Escudo Arcano</td><td>25</td><td>25s</td><td>Absorbe daño 8s</td></tr>
+          <tr><td>7</td><td>Parpadeo</td><td>15</td><td>8s</td><td>Teletransporte corto</td></tr>
+          <tr><td>8</td><td>Maldición</td><td>30</td><td>30s</td><td>Ralentiza 6s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>🔓 Desbloqueo por nivel <span class="nov gold">IMPORTANTE</span></h3>
+    <p>Los hechizos no están todos disponibles desde el inicio. Se desbloquean automáticamente:</p>
+    <ul>
+      <li><strong>Nivel 1:</strong> Descarga (0) y Nova (1)</li>
+      <li><strong>Nivel 2:</strong> + Drenar Vida (2)</li>
+      <li><strong>Nivel 3:</strong> + Aliento Infernal (3)</li>
+      <li><strong>Nivel 4:</strong> + Invocar Esqueleto (4)</li>
+      <li>Y así sucesivamente hasta el <strong>nivel 8</strong> que desbloquea los 9.</li>
+    </ul>
+    <div class="callout warn">
+      ⚠ Los hechizos bloqueados aparecen <strong>oscurecidos</strong> en la barra inferior. Al pulsarlos te dice el nivel necesario.
+    </div>
+
+    <h3>🌟 Maestrías de hechizos</h3>
+    <p>Cada hechizo desbloquea <strong>3 mejoras</strong> al usarlo mucho (100, 500, 1000 usos). Ejemplos:</p>
+    <ul>
+      <li><strong>Descarga Doble</strong> (500 usos): 15% de lanzar 2 proyectiles</li>
+      <li><strong>Nova Aturdidora</strong> (1000 usos): aturde 1s</li>
+      <li><strong>Escudo Reflectante</strong> (1000 usos): refleja 30% del daño</li>
+    </ul>
+
+    <h3>💫 Combos de hechizos</h3>
+    <p>Lanza dos hechizos concretos en menos de 1.2s:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Combo</th><th>Hechizos</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>Tormenta Ígnea</td><td>Aliento (3) + Nova (1)</td><td>Daño ×2.2</td></tr>
+          <tr><td>Cadena del Vacío</td><td>Drenar (2) + Descarga (0)</td><td>Daño ×1.8</td></tr>
+          <tr><td>Escarcha Maldita</td><td>Escudo (6) + Maldición (8)</td><td>Congela todo</td></tr>
+          <tr><td>Golpe Espectral</td><td>Parpadeo (7) + Descarga (0)</td><td>Crítico garantizado</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TALENTOS -->
+  <section id="talentos">
+    <h2><span class="ico">🎯</span> Talentos (5 ramas)</h2>
+    <p>Ganas <strong>1 punto de talento cada 2 niveles</strong>. A nivel 40 desbloqueas una <strong>segunda rama</strong> aleatoria.</p>
+    <div class="grid">
+      <div class="chip"><span class="ico">🌑</span><div class="name">Sombras</div><div class="desc">+daño, +crítico, quemaduras. ULT: explosión al matar.</div></div>
+      <div class="chip"><span class="ico">🔥</span><div class="name">Fuego</div><div class="desc">+área, +crítico, Nova quema. ULT: cráter ardiente.</div></div>
+      <div class="chip"><span class="ico">🩸</span><div class="name">Sangre</div><div class="desc">+vida, +robo de vida, regeneración. ULT: drenaje doble.</div></div>
+      <div class="chip"><span class="ico">🔮</span><div class="name">Arcano</div><div class="desc">-coste maná, +maná, escudo reforzado. ULT: auto-escudo.</div></div>
+      <div class="chip"><span class="ico">🌿</span><div class="name">Naturaleza</div><div class="desc">+drops, regeneración, +XP. ULT: 15% drop extra.</div></div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo">
+    <h2><span class="ico">🎒</span> Equipamiento</h2>
+    <h3>Slots</h3>
+    <p>⚔ Arma · 🛡 Túnica · 💍 Amuleto</p>
+
+    <h3>Rarezas</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rareza</th><th>Multiplicador</th></tr></thead>
+        <tbody>
+          <tr><td><span class="rarity r-comun">Común</span></td><td>×1.00</td></tr>
+          <tr><td><span class="rarity r-poco">Poco común</span></td><td>×1.30</td></tr>
+          <tr><td><span class="rarity r-raro">Raro</span></td><td>×1.70</td></tr>
+          <tr><td><span class="rarity r-epico">Épico</span></td><td>×2.20</td></tr>
+          <tr><td><span class="rarity r-legend">Legendario</span></td><td>×3.00</td></tr>
+          <tr><td><span class="rarity r-mitico">Mítico</span></td><td>×3.80</td></tr>
+          <tr><td><span class="rarity r-ancestral">Ancestral</span></td><td>×4.80</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Sets (3 piezas del mismo)</h3>
+    <ul>
+      <li><em>Sombras</em> — +15% daño</li>
+      <li><em>Fuego</em> — +20% crítico</li>
+      <li><em>Sangre</em> — +8% robo de vida</li>
+    </ul>
+
+    <h3>💎 Gemas</h3>
+    <p>Se engarzan en el equipo. Rubí (+ATQ), Zafiro (+MP), Esmeralda (+HP), Topacio (+INT), Diamante (+DEF), Amatista (+crítico). Especiales: <strong>Gema Negra</strong> (+15% daño jefes) y <strong>Gema Arcoíris</strong> (+5% a todos los stats).</p>
+
+    <h3>🔮 Runas (3 slots)</h3>
+    <ul>
+      <li>Runa de Crítico: +15% crítico</li>
+      <li>Runa de Vida: +3 HP/s</li>
+      <li>Runa de Fuego: ataques queman</li>
+      <li>Runa de Sangre: +10% robo de vida</li>
+      <li>Runa de Viento: +25% velocidad</li>
+      <li>Runa Arcana: +5 maná/s</li>
+    </ul>
+
+    <h3>🌟 Ítems únicos</h3>
+    <ul>
+      <li>Anillo del Vacío → 5% invocar sombra al matar</li>
+      <li>Amuleto del Fénix → revives 1 vez por reino</li>
+      <li>Túnica del Lobo → al 30% HP te transformas en lobo</li>
+      <li>Cetro del Kraken → 10% invocar tentáculo</li>
+      <li>Corazón de Dragón → quema enemigos cercanos</li>
+    </ul>
+
+    <div class="callout warn">
+      ⚠ Los ítems <strong>malditos</strong> (6% de probabilidad en Raro+) tienen stats ×1.6 pero también un efecto negativo.
+    </div>
+  </section>
+
+  <!-- FAMILIARES -->
+  <section id="familiares">
+    <h2><span class="ico">🐾</span> Familiares (Mascotas)</h2>
+    <div class="grid">
+      <div class="chip"><span class="ico">🐦‍⬛</span><div class="name">Cuervo Espectral</div><div class="desc">+10% crítico</div></div>
+      <div class="chip"><span class="ico">🐱</span><div class="name">Gato Demoníaco</div><div class="desc">+15% velocidad</div></div>
+      <div class="chip"><span class="ico">🦉</span><div class="name">Búho Sombrío</div><div class="desc">+20% XP</div></div>
+      <div class="chip"><span class="ico">🐍</span><div class="name">Serpiente Arcana</div><div class="desc">+10% robo de vida</div></div>
+    </div>
+    <p>Suben hasta nivel 10 y evolucionan 3 etapas. A partir del nivel 3 recogen recursos automáticamente. También pueden atacar: en nivel 3 disparan proyectiles y en nivel 5 hacen daño en área.</p>
+  </section>
+
+  <!-- MONTURAS -->
+  <section id="monturas">
+    <h2><span class="ico">🐴</span> Monturas</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Montura</th><th>Velocidad</th><th>Vuela</th><th>Precio</th></tr></thead>
+        <tbody>
+          <tr><td>Caballo Espectral</td><td>×1.8</td><td>No</td><td>1.500</td></tr>
+          <tr><td>Lobo Gigante</td><td>×2.0</td><td>No</td><td>3.000</td></tr>
+          <tr><td>Grifo</td><td>×2.5</td><td>Sí</td><td>8.000</td></tr>
+          <tr><td>Dragón Menor</td><td>×3.0</td><td>Sí</td><td>15.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Las que vuelan ignoran colisiones con paredes. Al montarte no puedes atacar ni lanzar hechizos hasta desmontarte.</p>
+  </section>
+
+  <!-- REINOS -->
+  <section id="reinos">
+    <h2><span class="ico">🗺️</span> Los 9 Reinos</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Reino</th><th>Nivel mín.</th><th>Ambientación</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>Aldea Sombría</td><td>1</td><td>Bosque / Desierto / Nieve / Pantano</td></tr>
+          <tr><td>1</td><td>Bosque Otoñal</td><td>10</td><td>Hojas naranjas</td></tr>
+          <tr><td>2</td><td>Desierto del Faraón</td><td>20</td><td>Arena y pirámides</td></tr>
+          <tr><td>3</td><td>Tundra Eterna</td><td>30</td><td>Nieve y hielo</td></tr>
+          <tr><td>4</td><td>Pantano Maldito</td><td>40</td><td>Niebla y esporas</td></tr>
+          <tr><td>5</td><td>Páramos Volcánicos</td><td>50</td><td>Magma</td></tr>
+          <tr><td>6</td><td>Reino Onírico 🔒</td><td>60</td><td>Sueño (secreto)</td></tr>
+          <tr><td>7</td><td>Reino Astral 🔒</td><td>70</td><td>Cósmico (secreto)</td></tr>
+          <tr><td>8</td><td>El Vacío 🔒</td><td>80</td><td>Nada (secreto)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      🔒 <strong>Bloqueo por nivel:</strong> NO puedes entrar a un reino si no tienes el nivel mínimo. Al acercarte al portal verás el mensaje <em>"🔒 [Reino] requiere nivel X (tienes Y)"</em>.
+    </div>
+
+    <div class="callout">
+      🔒 Los <strong>tres últimos reinos</strong> son secretos. Además del nivel, necesitas completar los actos 6, 7 y 8 de la historia principal para desbloquear los portales correspondientes en Aldea Sombría.
+    </div>
+
+    <h3>🗺️ Mapa completo mejorado <span class="nov blue">ACTUALIZADO</span></h3>
+    <p>Toca el minimapa para abrir el <strong>mapa a pantalla completa</strong>. Puedes:</p>
+    <ul>
+      <li><strong>Arrastrar</strong> con el dedo para moverte por el mapa</li>
+      <li><strong>Pinch</strong> con dos dedos para zoom</li>
+      <li><strong>Tocar cualquier objeto</strong> (pueblo, cueva, portal, jefe, lago, cofre) para ver info</li>
+      <li><strong>🎯 Navegar aquí</strong> para poner una ruta automática</li>
+      <li><strong>📍 Marcador</strong> para guardar puntos de interés</li>
+      <li><strong>Rutas entre reinos:</strong> si pones una misión de otro reino, la brújula te lleva al portal correcto</li>
+    </ul>
+  </section>
+
+  <!-- ENEMIGOS -->
+  <section id="enemigos">
+    <h2><span class="ico">👹</span> Enemigos y Jefes</h2>
+    <p>Más de <strong>15 tipos distintos</strong> repartidos por reino: Limo, Esqueleto, Lobo Sombrío, Diablillo, Murciélago, Gárgola, Nigromante, Escorpión, Momia, Yeti, Lobo de Hielo, Sapo Venenoso, Cieno, Kraken.</p>
+    <p>Los <em>ranged</em> disparan proyectiles. Los <em>élite</em> (★) tienen 3× HP y drops extra.</p>
+
+    <h3>💀 Nigromantes con casteo <span class="nov gold">ACTUALIZADO</span></h3>
+    <p>Los <strong>Nigromantes</strong> ya no invocan instantáneamente. Ahora:</p>
+    <ul>
+      <li>Se detienen y <strong>castean durante 2 segundos</strong></li>
+      <li>Aparece una <strong>barra morada debajo de ellos</strong> que se va llenando</li>
+      <li>Si los <strong>golpeas mientras castean, se interrumpe</strong> y el casteo se pierde</li>
+      <li>Si terminan el casteo, invocan 2 esqueletos</li>
+      <li>El intervalo entre invocaciones es de ~3 segundos (antes 5)</li>
+    </ul>
+    <div class="callout tip">
+      💡 <strong>Estrategia:</strong> dales un golpe rápido cuando veas la barra empezando para cortarles la invocación. Son mucho más peligrosos si los dejas castear.
+    </div>
+
+    <h3>👑 Jefes (11)</h3>
+    <p>Señor de las Sombras, Rey Esqueleto, Maestro de Forja, Señor de las Hojas, Faraón, Señor de la Escarcha, Rey del Cieno, Señor del Magma, Rey Onírico, Devorador Astral, <strong>El Vacío</strong>. Cada reino tiene 1-2.</p>
+
+    <h3>🌍 Eventos mundiales (cada ~7 min)</h3>
+    <ul>
+      <li>Invasión de no-muertos</li>
+      <li>Horda de demonios</li>
+      <li>Lluvia de meteoros</li>
+      <li>Campamento de bandidos</li>
+    </ul>
+    <p>Sobrevive 60s y ganas <strong>+500 XP, +300 oro y reputación</strong>.</p>
+
+    <h3>⚠ Invasiones (cada 30 min)</h3>
+    <p>Un jefe ataca una aldea. Tienes <strong>3 minutos</strong> para matarlo. Recompensa: <strong>2000+ oro, 1500 XP, +20 reputación</strong>.</p>
+  </section>
+
+  <!-- MAZMORRAS -->
+  <section id="mazmorras">
+    <h2><span class="ico">🏰</span> Mazmorras y Cuevas</h2>
+    <ul>
+      <li><strong>Mazmorras:</strong> 5-8 pisos con enemigos escalados. En el último piso, jefe.</li>
+      <li><strong>Cuevas:</strong> arena única con jefe y 6-15 enemigos. Desbloquean logros.</li>
+      <li><strong>Abismo Infinito:</strong> oleadas sin fin. Récord guardado en ranking.</li>
+    </ul>
+    <div class="callout">
+      ⚠ Al entrar a una instancia (mazmorra, cueva, isla, abismo), te desmontas automáticamente. No puedes usar monturas dentro.
+    </div>
+  </section>
+
+  <!-- PUEBLOS -->
+  <section id="pueblos">
+    <h2><span class="ico">🏘️</span> Pueblos y NPCs</h2>
+    <p>Cada reino tiene 1-3 pueblos con estilo propio. Edificios: herrería, boticario, taberna, torre del brujo, banco.</p>
+
+    <h3>Vendedores</h3>
+    <ul>
+      <li>⚔ <strong>Armero</strong> — armas, armaduras, gemas, runas, monturas, teleports</li>
+      <li>🧪 <strong>Boticario</strong> — pociones, comida, bebida</li>
+      <li>🏦 <strong>Banquero</strong> — bóveda con interés del 5% diario</li>
+      <li>⚒ <strong>Cocinero</strong> — crafteo</li>
+      <li>📜 <strong>Maestro de misiones</strong> — quests</li>
+      <li>🍺 <strong>Tabernero</strong> — apuestas de dados, comida, bebida</li>
+    </ul>
+
+    <h3>NPCs</h3>
+    <ul>
+      <li>Guardias (fijos y patrulleros) que atacan enemigos</li>
+      <li>Trabajadores (herrero, barrendero, ayudante)</li>
+      <li>Civiles que caminan por el pueblo</li>
+      <li>Animales (gallinas, cerdos, perros, gatos, cuervos)</li>
+    </ul>
+
+    <div class="callout">
+      🌙 De noche los vendedores cierran. Cada reino tiene ciclo día/noche.
+    </div>
+  </section>
+
+  <!-- MISIONES -->
+  <section id="misiones">
+    <h2><span class="ico">📜</span> Misiones <span class="nov">CORREGIDO</span></h2>
+    <ul>
+      <li><strong>Historia principal:</strong> 9 actos con misiones encadenadas. Empieza en Aldea Sombría con el Maestro Aldo.</li>
+      <li><strong>Normales</strong> (10 definidas): matar X enemigos, recolectar materiales, escoltar, jefes, investigaciones.</li>
+      <li><strong>Diarias</strong> (3 al día): se regeneran cada 24h reales. Solo estas cuentan kills incrementales.</li>
+      <li><strong>Secundarias:</strong> 360 misiones repartidas por reino. Se generan dinámicamente según tu reino actual.</li>
+    </ul>
+
+    <div class="callout tip">
+      ✅ <strong>Corrección importante:</strong> las misiones ahora <strong>se completan al instante</strong> cuando cumples el objetivo. Antes había un bug donde el contador se mostraba pero no se completaba.
+    </div>
+
+    <h3>Sistema de progreso</h3>
+    <p>Las misiones de tipo <em>kill</em>, <em>collect</em> y <em>boss</em> usan contadores desde el momento de aceptarlas. Esto significa que <strong>si ya tenías 100 kills y aceptas "mata 8 limos", necesitas matar 8 más</strong>. Es lo justo.</p>
+
+    <h3>🧭 Botón "Ir" mejorado <span class="nov blue">ACTUALIZADO</span></h3>
+    <p>Cada misión tiene un botón <strong>🧭 Ir</strong> que pone un destino automático:</p>
+    <ul>
+      <li>Si el objetivo está en tu reino → <strong>destino directo</strong></li>
+      <li>Si el jefe está en otro reino → <strong>te guía al portal que lleva allí</strong></li>
+      <li>Si es un reino secreto y no estás en Aldea Sombría → <strong>te guía al portal de vuelta a Aldea primero</strong></li>
+    </ul>
+    <div class="callout">
+      Ejemplo: misión "Rey Onírico" desde Páramos Volcánicos → 🚶 "Vuelve a Aldea Sombría" → desde Aldea → 🎯 "Portal Onírico" → desde Reino Onírico → 🎯 "Palacio Onírico".
+    </div>
+  </section>
+
+  <!-- CRAFTEO -->
+  <section id="crafteo">
+    <h2><span class="ico">🧪</span> Crafteo</h2>
+    <p>Crea pociones, armas, armaduras, monturas (¡las 4!), gemas, huevos de familiar y runas.</p>
+
+    <h3>Materiales</h3>
+    <p>Gel de Limo, Hueso, Piel de Lobo, Esencia Demoníaca, Cristal Arcano, Hierro, Hierba Lunar, Ala de Murciélago, Arena, Hielo, Hierba Pútrida, Escama de Kraken.</p>
+
+    <h3>⚒ Fundición avanzada</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Conversión</th><th>Coste</th></tr></thead>
+        <tbody>
+          <tr><td>10 Comunes → 1 Poco común</td><td>100</td></tr>
+          <tr><td>10 Poco comunes → 1 Raro</td><td>300</td></tr>
+          <tr><td>8 Raros → 1 Épico</td><td>800</td></tr>
+          <tr><td>5 Épicos → 1 Legendario</td><td>2.000</td></tr>
+          <tr><td>3 Legendarios → 1 Mítico</td><td>5.000</td></tr>
+          <tr><td>2 Míticos → 1 Ancestral</td><td>15.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PESCA -->
+  <section id="pesca">
+    <h2><span class="ico">🎣</span> Pesca</h2>
+    <p>Acércate a un lago. Minijuego: pulsa cuando el cursor esté en la zona verde.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Botín</th><th>Probabilidad</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Pez Común</td><td>45%</td><td>25 oro</td></tr>
+          <tr><td>Pez Pequeño</td><td>20%</td><td>15 oro</td></tr>
+          <tr><td>Pez Raro</td><td>15%</td><td>120 oro</td></tr>
+          <tr><td>Botín Hundido</td><td>8%</td><td>Item aleatorio</td></tr>
+          <tr><td>Pez Espada</td><td>6%</td><td>400 oro</td></tr>
+          <tr><td>Reliquia Antigua</td><td>4%</td><td>Item único</td></tr>
+          <tr><td>Gema Marina</td><td>2%</td><td>Gema</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- HERRERÍA -->
+  <section id="herrería">
+    <h2><span class="ico">⚒️</span> Herrería</h2>
+    <p>Minijuego de <strong>memoria</strong>: te muestra 4 símbolos, debes repetirlos. Si aciertas, mejoras el equipo equipado <strong>+5%</strong>.</p>
+  </section>
+
+  <!-- ARENA -->
+  <section id="arena">
+    <h2><span class="ico">⚔️</span> Arena</h2>
+    <p>Combate contra <strong>campeones únicos</strong> por reino (6 en total). Cada uno suelta su arma legendaria o mítica.</p>
+    <ul>
+      <li>Sylas el Sombrío (Nv12) → Espada de Sombras</li>
+      <li>Eira de las Hojas (Nv22) → Guadaña Otoñal</li>
+      <li>Khepri el Dorado (Nv32) → Cetro del Sol</li>
+      <li>Bjorn el Glacial (Nv42) → Hacha del Invierno</li>
+      <li>Vex el Podrido (Nv52) → Alabarda Pútrida</li>
+      <li>Ignis el Ígneo (Nv62) → Espada de Magma</li>
+    </ul>
+  </section>
+
+  <!-- PVP -->
+  <section id="pvp">
+    <h2><span class="ico">🗡️</span> PvP (modo online)</h2>
+    <p>Solo disponible en modo online. Dos modalidades:</p>
+
+    <h3>⚔ Duelo cercano</h3>
+    <p>Cuando dos jugadores están a menos de 80px en el mundo, aparece un botón de desafío. Al aceptar, comienza el duelo <strong>en el mismo lugar donde estáis</strong> (no os teletransporta).</p>
+    <ul>
+      <li>Termina cuando uno baja del <strong>5% de HP</strong></li>
+      <li>Si uno llega a 0 HP, revive al instante con 1 HP en la misma posición</li>
+      <li>El ganador recibe oro y sube ELO</li>
+    </ul>
+
+    <h3>🏟️ Arena 1v1 (cola)</h3>
+    <p>Entra en la cola desde el menú PvP. El sistema te empareja con otro jugador de nivel similar (±3 niveles) y os teletransporta a una arena 3000×3000.</p>
+    <ul>
+      <li>Cuenta atrás de 5 segundos antes de empezar</li>
+      <li>Ambos empiezan con HP/MP llenos y sin cooldowns</li>
+      <li>Ganador: 500+ oro y ELO subido</li>
+      <li>Perdedor: 100 oro y ELO bajado</li>
+    </ul>
+
+    <div class="callout info">
+      🏆 <strong>ELO:</strong> empiezas en 1000. El sistema usa fórmula estándar (K=25) para ajustar tu puntuación según el ELO del rival. Ranking visible en el hub.
+    </div>
+  </section>
+
+  <!-- LOGROS -->
+  <section id="logros">
+    <h2><span class="ico">🏆</span> Logros (48)</h2>
+    <p>Con <strong>recompensas reales</strong>: oro, XP o items. Ejemplos:</p>
+    <ul>
+      <li>Primera sangre → 50 oro</li>
+      <li>Cazador (100 kills) → 200 oro, 300 XP</li>
+      <li>Verdugo (1000 kills) → 1000 oro, 2000 XP</li>
+      <li>Leyenda (3 jefes) → 2000 oro, 2000 XP + item</li>
+      <li>Cazador de Krákens → 5000 oro, 5000 XP + item</li>
+      <li>Campeón de Arena → 5000 oro, 5000 XP + item</li>
+      <li>Héroe épico → 5000 oro, 5000 XP + item</li>
+      <li>Riqueza ancestral (item ancestral) → 3000 oro</li>
+    </ul>
+
+    <div class="callout info">
+      🌐 En modo online, cuando desbloqueas un logro por primera vez en el servidor, aparece un <strong>mensaje en el chat global</strong>: "¡[Tu nombre] es el PRIMERO en desbloquear [logro]!"
+    </div>
+  </section>
+
+  <!-- CLANES -->
+  <section id="clanes">
+    <h2><span class="ico">🏛️</span> Hermandades (Clanes) — Modo online</h2>
+    <p>Funda tu hermandad por <strong>1000 oro</strong> o únete a una existente por invitación. Sube de nivel donando oro y desbloquea perks:</p>
+    <ul>
+      <li>+5% daño / nivel</li>
+      <li>+8% vida / nivel</li>
+      <li>+10% oro / nivel</li>
+      <li>+8% XP / nivel</li>
+    </ul>
+    <p>Los clanes tienen:</p>
+    <ul>
+      <li><strong>Banco compartido</strong> (30 slots) para guardar items</li>
+      <li><strong>Roles:</strong> Líder, Oficial, Miembro</li>
+      <li><strong>Invitar, expulsar, ascender, degradar</strong></li>
+      <li><strong>Ceder liderazgo o disolver</strong> el clan</li>
+      <li><strong>Ranking global de hermandades</strong></li>
+    </ul>
+  </section>
+
+  <!-- CLIMA -->
+  <section id="clima">
+    <h2><span class="ico">🌦️</span> Clima</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Clima</th><th>Precisión</th><th>Velocidad</th><th>Regen</th></tr></thead>
+        <tbody>
+          <tr><td>Despejado</td><td>100%</td><td>100%</td><td>100%</td></tr>
+          <tr><td>Lluvia</td><td>90%</td><td>95%</td><td>80%</td></tr>
+          <tr><td>Niebla</td><td>80%</td><td>100%</td><td>100%</td></tr>
+          <tr><td>Tormenta</td><td>70%</td><td>85%</td><td>70%</td></tr>
+          <tr><td>Tormenta de arena</td><td>60%</td><td>85%</td><td>80%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>En modo online, el <strong>clima es compartido</strong> entre todos los jugadores del mismo reino.</p>
+  </section>
+
+  <!-- SECRETOS -->
+  <section id="secretos">
+    <h2><span class="ico">🤫</span> Secretos</h2>
+
+    <h3>🏙️ Ciudad Flotante</h3>
+    <p>Aparece <strong>1 vez cada 24h reales</strong> durante 1 hora en un reino aleatorio. Vende ítems exclusivos: Poción Maestra, Runa Ancestral, Gema Arcoíris, Item Épico+, Item Ancestral.</p>
+
+    <h3>💀 Mercado Negro</h3>
+    <p>Aparece aleatoriamente en el mapa durante 5 min. Vende items con <strong>stats ×1.5 y precio ×2</strong>, además de 50% de probabilidad de un <strong>item único</strong>.</p>
+
+    <h3>🔓 Reinos secretos</h3>
+    <p>Los reinos 6, 7 y 8 se desbloquean completando los actos 6, 7 y 8 de la historia principal. Los portales aparecen en Aldea Sombría:</p>
+    <ul>
+      <li>🌀 <strong>Portal Onírico</strong> (arriba-izquierda) tras el Acto 6</li>
+      <li>✨ <strong>Portal Astral</strong> (arriba-derecha) tras el Acto 7</li>
+      <li>🌑 <strong>Portal del Vacío</strong> (abajo-derecha) tras el Acto 8</li>
+    </ul>
+
+    <h3>⚰️ Tumbas de jugador</h3>
+    <p>Al morir pierdes el 10% de tu oro, pero un 70% de lo perdido aparece en una <strong>tumba en el lugar donde moriste</strong>. Si vuelves antes de 1 hora, lo recuperas. ¡Pero cuidado: puede estar rodeada de enemigos!</p>
+
+    <h3>🐾 Mascotas coleccionistas</h3>
+    <p>Desde nivel 3, tu mascota recoge automáticamente <strong>hierbas y minerales</strong> cercanos cada 5 segundos. Los guardianes te los traen a ti.</p>
+  </section>
+
+  <!-- CONSEJOS -->
+  <section id="consejos">
+    <h2><span class="ico">💡</span> Consejos PRO</h2>
+    <ol>
+      <li><strong>Sube tus hechizos con maestría:</strong> lanza siempre los mismos para desbloquear mejoras.</li>
+      <li><strong>Aprende los combos:</strong> Tormenta Ígnea hace 2.2× daño y es devastador contra jefes.</li>
+      <li><strong>Interrumpe nigromantes:</strong> dales un golpe rápido cuando veas la barra morada de casteo.</li>
+      <li><strong>Apuesta en la taberna:</strong> ~48% probabilidad pero dobla la apuesta. Rentable a largo plazo.</li>
+      <li><strong>Cofres de temporada:</strong> se generan por reino. Uno por reino cada vez.</li>
+      <li><strong>Mercado Negro:</strong> si aparece, ve SIEMPRE. Los stats ×1.5 valen mucho.</li>
+      <li><strong>Ciudad Flotante:</strong> date prisa, solo dura 1 hora real. Aparece en 1 reino aleatorio.</li>
+      <li><strong>Interés de bóveda:</strong> deposita todo antes de cerrar el juego para acumular 5% diario.</li>
+      <li><strong>Familiar Búho:</strong> +20% XP, ideal para farmear niveles rápido.</li>
+      <li><strong>Runa de Vida:</strong> +3 HP/s es enorme para sobrevivir jefes largos.</li>
+      <li><strong>Alimenta a tu mascota:</strong> +5 amistad por material. Al llegar a 100% ganas +20% daño de mascota.</li>
+      <li><strong>Usa el mapa:</strong> toca el minimapa y marca destinos con 🎯. Auto-walk disponible.</li>
+      <li><strong>Portales bloqueados:</strong> sube al nivel mínimo del reino antes de acercarte.</li>
+      <li><strong>Modo online:</strong> las hermandades dan bonus importantes (+5% daño, +8% vida por nivel).</li>
+      <li><strong>No mates al Fénix:</strong> el Amuleto del Fénix te revive 1 vez por reino. Muy valioso.</li>
+    </ol>
+
+    <div class="callout gold">
+      🎯 <strong>Ruta recomendada:</strong> Farmea en Aldea Sombría hasta nivel 10 → Bosque Otoñal hasta 20 → elige subclase → Desierto hasta 30 → Tundra hasta 40 → desbloquea 2ª rama de talentos → Pantano hasta 50 → Páramos hasta 60 → Actos 6-7-8 → reinos secretos → Vacío.
+    </div>
+
+    <h3>🆕 Consejos específicos del modo online</h3>
+    <ul>
+      <li><strong>Los duelos cercanos</strong> son la mejor forma de ganar ELO rápido si eres fuerte.</li>
+      <li><strong>El mercado P2P</strong> tiene 5% de comisión, así que vende a precios competitivos.</li>
+      <li><strong>Únete a una hermandad activa</strong> para conseguir los perks más rápido.</li>
+      <li><strong>El chat global</strong> tiene moderación automática. Evita palabras prohibidas o te las enmascara.</li>
+      <li><strong>Reporta mensajes ofensivos</strong> con el botón ⚠ junto a cada mensaje.</li>
+      <li><strong>Guarda antes de cerrar sesión</strong> — el juego lo hace solo, pero si cierras la app bruscamente podría no sincronizar.</li>
+      <li><strong>Cierra sesión siempre desde el botón 🚪</strong> para evitar corromper el save.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>Brujo de las Sombras · Guía y descarga oficial</p>
+  <p style="margin-top:8px;font-size:0.8rem;color:#6b7280;">Guía actualizada al sistema de cuentas online y mejoras de gameplay.</p>
+</footer>
+
+<button id="top" title="Volver arriba">▲</button>
+
+<!-- TOAST "COPIADO" -->
+<div id="copyToast">✅ Copiado al portapapeles</div>
+
+<script>
+  // Reproducción automática del video (silenciado, con fallback)
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('videogame');
+    if (video) {
+      video.play().catch(err => {
+        console.log('Autoplay bloqueado por el navegador:', err);
+      });
+    }
+  });
+
+  // Botón volver arriba
+  const topBtn = document.getElementById('top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) topBtn.classList.add('show');
+    else topBtn.classList.remove('show');
+  });
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Navegación suave
+  document.querySelectorAll('nav a, a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ============================================================
+  // BOTÓN COPIAR AL PORTAPAPELES
+  // ============================================================
+  function showCopyToast(msg){
+    const toast = document.getElementById('copyToast');
+    if (!toast) return;
+    if (msg) toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => {
+      toast.classList.remove('show');
+      toast.textContent = '✅ Copiado al portapapeles';
+    }, 1800);
+  }
+
+  function copyToClipboard(text, btn){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        onCopySuccess(btn);
+      }).catch(() => {
+        fallbackCopy(text, btn);
+      });
+    } else {
+      fallbackCopy(text, btn);
+    }
+  }
+
+  function fallbackCopy(text, btn){
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      if (ok) onCopySuccess(btn);
+      else showCopyToast('❌ No se pudo copiar');
+    } catch(e){
+      showCopyToast('❌ No se pudo copiar');
+    }
+  }
+
+  function onCopySuccess(btn){
+    if (btn){
+      btn.classList.add('copied');
+      btn.textContent = '✅';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.textContent = '📋';
+      }, 1800);
+    }
+    showCopyToast('✅ Copiado al portapapeles');
+  }
+
+  ['btnCopyServer', 'btnCopyServer2'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    const parent = btn.closest('.server-row');
+    const urlEl = parent ? parent.querySelector('.server-url') : null;
+    if (!urlEl) return;
+    btn.addEventListener('click', () => {
+      copyToClipboard(urlEl.textContent.trim(), btn);
+    });
+  });
+</script>
+
+</body>
+</html>
