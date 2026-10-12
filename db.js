@@ -140,7 +140,7 @@ const APPS_DB = [
   },
   {
     id: 12,
-    nombre: "Brujo de las Sombras<br><b style='font-size:12px;'>La Saga del Último Pacto</b>",
+    nombre: "Brujo de las Sombras",
     version: "1.0",
     categoria: "juego",
     descripcion: "Juego en Desarrollo<br><b>Version de Pruevas</b><br>MMORPG de acción y aventura.",
