@@ -1,0 +1,60 @@
+# ============================================
+# YSWEBAPK - .htaccess raíz
+# ============================================
+
+# --- Forzar HTTPS ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ✅ CORRECTA:
+RewriteRule ^sitemap\.xml$ sitemap.php?output=1 [L,QSA]
+
+# --- Bloquear navegación de directorios ---
+Options -Indexes
+
+# --- Bloquear archivos sensibles ---
+<FilesMatch "\.(env|log|sql|bak|ini|conf|lock|sh|yml|yaml)$">
+    Require all denied
+</FilesMatch>
+
+<Files "versiones.json">
+    Require all denied
+</Files>
+
+# --- Cabeceras de seguridad ---
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # CSP: permite FA (cdnjs), QR (jsdelivr) y ads (mrmnd)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://ds.mrmnd.com https://ss.mrmnd.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com data:; img-src 'self' data: blob: https:; connect-src 'self' https:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';"
+</IfModule>
+
+# --- Compresión GZIP ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml image/svg+xml
+</IfModule>
+
+# --- Cache de archivos estáticos ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# --- MIME types extra ---
+AddType application/vnd.android.package-archive .apk
+AddType image/webp .webp
